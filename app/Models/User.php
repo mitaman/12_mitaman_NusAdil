@@ -6,6 +6,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\UserType;
+use App\Models\Sewa;
+use App\Models\Pengacara;
 
 class User extends Authenticatable
 {
@@ -21,6 +24,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'no_hp',
+        'usertype_id',
     ];
 
     /**
@@ -44,5 +49,20 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function usertype()
+    {
+        return $this->belongsTo(UserType::class, 'usertype_id');
+    }
+
+    public function sewa()
+    {
+        return $this->hasMany(Sewa::class);
+    }
+
+    public function pengacara()
+    {
+        return $this->hasOne(Pengacara::class);
     }
 }
