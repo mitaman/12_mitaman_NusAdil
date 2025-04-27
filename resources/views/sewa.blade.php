@@ -17,14 +17,8 @@
                             <label for="pengacara_id" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                 {{ __('Pilih Pengacara') }}
                             </label>
-                            <!-- <select name="pengacara_id" id="pengacara_id" required
-                                class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
-                                @foreach ($advokats as $advokat)
-                                    <option value="{{ $advokat['id'] }}">{{ $advokat['name'] }}</option>
-                                @endforeach
-                            </select> -->
                             <input type="text" name="advokat_nama" id="advokat_nama" required class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" disabled value="{{ $advokat_name }}">
-                            <input type="text" name="advokat_id" value="{{ $advokat_id }}" hidden>
+                            <input type="text" name="pengacara_id" value="{{ $advokat_id }}" hidden>
                         </div>
 
                         <!-- Topik Kasus -->

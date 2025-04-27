@@ -29,14 +29,14 @@ class SewaController extends Controller
         try {
             $request->validate([
                 'pengacara_id' => 'required',
-                'topik_kasus' => 'required',
+                'kategori_kasus_id' => 'required',
                 'deskripsi_kasus' => 'required'
             ]);
     
             $sewa = Sewa::create([
                 'user_id' => Auth::id(),
                 'pengacara_id' => $request->pengacara_id,
-                'topik_kasus' => $request->topik_kasus,
+                'kategori_kasus_id' => $request->kategori_kasus_id,
                 'deskripsi_kasus' => $request->deskripsi_kasus,
                 'fee' => 0,
                 'status' => 'pending',
